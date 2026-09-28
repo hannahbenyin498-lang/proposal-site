@@ -1,0 +1,525 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: #080509;
+    color: white;
+    overflow-x: hidden;
+}
+
+.background-video {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.2;
+    filter: brightness(0.55);
+    pointer-events: none;
+}
+
+h1,
+h2,
+h3 {
+    font-family: "Cormorant Garamond", serif;
+}
+
+button {
+    font-family: "Poppins", sans-serif;
+}
+
+
+/* =========================
+   OPENING
+========================= */
+
+.screen {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+#opening {
+    background:
+        radial-gradient(circle at center, rgba(53, 21, 34, 0.82) 0%, rgba(18, 8, 14, 0.88) 40%, rgba(5, 3, 6, 0.9) 100%);
+}
+
+.opening-content {
+    position: relative;
+    z-index: 3;
+    padding: 30px;
+    animation: fadeUp 2s ease;
+}
+
+.small-text {
+    font-size: 0.8rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    opacity: 0.6;
+    margin-bottom: 25px;
+}
+
+.opening-content h1 {
+    font-size: clamp(4rem, 12vw, 9rem);
+    font-weight: 500;
+}
+
+.opening-content h1 span,
+h2 span,
+.proposal h1 span {
+    color: #ff6f91;
+}
+
+.subtitle {
+    margin-top: 15px;
+    letter-spacing: 5px;
+    font-size: 0.8rem;
+    opacity: 0.6;
+}
+
+button {
+    margin-top: 40px;
+    padding: 15px 30px;
+    border-radius: 50px;
+    border: 1px solid rgba(255,255,255,0.3);
+    background: rgba(255,255,255,0.08);
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.06);
+    background: rgba(255,111,145,0.25);
+}
+
+
+/* =========================
+   STORY
+========================= */
+
+#story {
+    display: none;
+    position: relative;
+    z-index: 1;
+}
+
+.chapter {
+    min-height: 100vh;
+    padding: 100px 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background:
+        radial-gradient(circle at top, rgba(48, 20, 30, 0.82), rgba(10, 6, 9, 0.9) 65%);
+}
+
+.chapter.dark {
+    background:
+        radial-gradient(circle at center, rgba(33, 16, 25, 0.84), rgba(5, 3, 6, 0.9) 70%);
+}
+
+.chapter-number {
+    font-size: 0.7rem;
+    letter-spacing: 5px;
+    opacity: 0.4;
+    margin-bottom: 30px;
+}
+
+.chapter h2 {
+    font-size: clamp(3rem, 8vw, 6rem);
+    font-weight: 500;
+    line-height: 0.95;
+    max-width: 900px;
+}
+
+.chapter p {
+    max-width: 600px;
+    line-height: 2;
+    opacity: 0.75;
+    margin-top: 30px;
+}
+
+.highlight {
+    color: #ff8ba7;
+    font-size: 1.2rem;
+    opacity: 1 !important;
+}
+
+.date {
+    margin-top: 60px;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 5rem;
+    color: #ff6f91;
+}
+
+.date-text {
+    margin-top: 0 !important;
+    font-size: 0.8rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+
+/* =========================
+   BIG SMOKE
+========================= */
+
+.smoke-card {
+    margin-top: 50px;
+    padding: 45px;
+    width: min(90%, 450px);
+    border-radius: 25px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+}
+
+.smoke-icon {
+    font-size: 3rem;
+}
+
+.smoke-card h3 {
+    font-size: 3rem;
+    margin-top: 10px;
+}
+
+.smoke-card p {
+    margin-top: 10px;
+}
+
+.smoke-card .tiny {
+    font-size: 0.75rem;
+    opacity: 0.45;
+}
+
+
+/* =========================
+   MUSIC
+========================= */
+
+.music-circle {
+    margin-top: 50px;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 1px solid #ff6f91;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    color: #ff6f91;
+    animation: pulse 2s infinite;
+}
+
+.music-message {
+    font-style: italic;
+}
+
+
+/* =========================
+   POEM
+========================= */
+
+.poem {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 1.5rem;
+    line-height: 2 !important;
+    opacity: 0.9 !important;
+}
+
+
+/* =========================
+   PROPOSAL
+========================= */
+
+.proposal {
+    min-height: 100vh;
+    padding: 100px 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    background:
+        radial-gradient(circle at center, rgba(66, 22, 36, 0.84), rgba(9, 5, 9, 0.9) 70%);
+}
+
+.proposal-content {
+    max-width: 800px;
+}
+
+.heart-big {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    animation: heartbeat 1.5s infinite;
+}
+
+.proposal h2 {
+    font-size: 4rem;
+}
+
+.proposal h1 {
+    margin-top: 40px;
+    font-size: clamp(4rem, 10vw, 8rem);
+    line-height: 0.9;
+}
+
+.proposal-text {
+    margin: 35px auto;
+    max-width: 600px;
+    line-height: 2;
+    opacity: 0.75;
+}
+
+.poetic-ending {
+    margin-top: 45px;
+    line-height: 2;
+    opacity: 0.7;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.buttons button {
+    min-width: 160px;
+}
+
+.yes {
+    background: #ff416c;
+    border: none;
+}
+
+.maybe {
+    background: rgba(255,255,255,0.05);
+}
+
+
+/* =========================
+   YES SCREEN
+========================= */
+
+#yes-screen {
+    display: none;
+    position: relative;
+    z-index: 1;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 30px;
+
+    background:
+        radial-gradient(circle at center, rgba(87, 24, 44, 0.84), rgba(8, 5, 9, 0.9) 70%);
+}
+
+.celebration {
+    animation: fadeUp 1.5s ease;
+}
+
+.big-heart {
+    font-size: 7rem;
+    animation: heartbeat 1s infinite;
+}
+
+.celebration h1 {
+    font-size: clamp(3rem, 8vw, 6rem);
+    margin-top: 20px;
+}
+
+.celebration h2 {
+    font-size: 2.5rem;
+    margin-top: 20px;
+}
+
+.final-message {
+    max-width: 500px;
+    margin: 30px auto;
+    line-height: 2;
+    opacity: 0.7;
+}
+
+.forever {
+    margin-top: 40px;
+    letter-spacing: 8px;
+    color: #ff6f91;
+}
+
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes fadeUp {
+
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+@keyframes heartbeat {
+
+    0% {
+        transform: scale(1);
+    }
+
+    20% {
+        transform: scale(1.15);
+    }
+
+    40% {
+        transform: scale(1);
+    }
+
+    60% {
+        transform: scale(1.1);
+    }
+
+    80% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+
+}
+
+@keyframes pulse {
+
+    0% {
+        box-shadow: 0 0 0 0 rgba(255,111,145,0.4);
+    }
+
+    70% {
+        box-shadow: 0 0 0 30px rgba(255,111,145,0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(255,111,145,0);
+    }
+
+}
+
+
+/* =========================
+   FLOATING HEARTS
+========================= */
+
+.heart {
+    position: fixed;
+    bottom: -30px;
+    font-size: 20px;
+    opacity: 0.5;
+    animation: floatHeart linear forwards;
+    pointer-events: none;
+    z-index: 10;
+}
+
+@keyframes floatHeart {
+
+    from {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 0.6;
+    }
+
+    to {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+
+}
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    .chapter {
+        padding: 80px 20px;
+    }
+
+    .proposal {
+        padding: 70px 20px;
+    }
+
+    .proposal h2 {
+        font-size: 3rem;
+    }
+
+    .date {
+        font-size: 4rem;
+    }
+
+}
+.photo-grid {
+    width: min(100%, 900px);
+    margin-top: 50px;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.photo-grid img {
+    width: 100%;
+    height: 350px;
+
+    object-fit: cover;
+
+    border-radius: 20px;
+
+    border: 1px solid rgba(255,255,255,0.15);
+
+    transition: 0.5s ease;
+
+    filter: brightness(0.85);
+}
+
+.photo-grid img:hover {
+    transform: scale(1.04);
+    filter: brightness(1);
+}
+
+@media (max-width: 700px) {
+
+    .photo-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .photo-grid img {
+        height: 400px;
+    }
+
+}
